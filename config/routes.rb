@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   end
   devise_for :users, :controllers => {:registrations => "registrations"}
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: "pages#index"
-  get "/index", to: "pages#index"
+  root to: "articles#index"
+  get "/index", to: "articles#index"
   get "/tour", to: "pages#tour"
   get "/map", to: "pages#map"
 end

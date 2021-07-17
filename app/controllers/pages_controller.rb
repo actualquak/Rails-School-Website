@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
-  def index
-  end
+  @articles = Article.all
   def tour
+  end
+  def map
   end
 end

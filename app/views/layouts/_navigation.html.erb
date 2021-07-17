@@ -10,6 +10,9 @@
           <li class="nav-item">
             <%= link_to "Log out", "/signout", class: "nav-link active" %>
           </li>
+          <li class="nav-item">
+            <%= link_to "Settings", "/setttings", class: "nav-link disabled" %>
+          </li>
         <% else %>
           <li class="nav-item">
             <%= link_to "Log in", "/signin", class: "nav-link active" %>
@@ -29,10 +32,13 @@
             Articles
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <% @articles.each do |article| %>
+
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+            <% end %>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><%= link_to "Full list", "/index", class: "dropdown-item" %></li>
           </ul>
         </li>
         <li class="nav-item">
