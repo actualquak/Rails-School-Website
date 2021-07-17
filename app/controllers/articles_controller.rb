@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
   end
   def latest
     redirect_to "/articles"
@@ -12,7 +11,7 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
   def create
-    @article = Article.new(title: "...", content: "...")
+    @article = Article.new(article_params)
 
     if @article.save
       redirect_to @article

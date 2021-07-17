@@ -33,7 +33,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <% set_articles %>
-            <% @articles.each do |article| %>
+            <% @first_5_articles.each do |article| %>
               <li><%= link_to article.title, article, class: "dropdown-item" %></li>
             <% end %>
             <li><hr class="dropdown-divider"></li>
