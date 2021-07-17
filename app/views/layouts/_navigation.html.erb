@@ -32,11 +32,12 @@
             Articles
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <% set_articles %>
             <% @articles.each do |article| %>
               <li><%= link_to article.title, article, class: "dropdown-item" %></li>
             <% end %>
             <li><hr class="dropdown-divider"></li>
-            <li><%= link_to "Full list", "/index", class: "dropdown-item" %></li>
+            <li><%= link_to "Full list", "/articles", class: "dropdown-item" %></li>
           </ul>
         </li>
         <li class="nav-item">

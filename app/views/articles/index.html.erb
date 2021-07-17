@@ -2,3 +2,4 @@
 <% @articles.each do |article| %>
   <%= link_to article.title, article, class: "dropdown-item" %>
 <% end %>
+<%= link_to "new", "/articles/new" %>

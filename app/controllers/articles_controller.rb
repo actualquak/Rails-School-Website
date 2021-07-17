@@ -1,14 +1,14 @@
 class ArticlesController < ApplicationController
-  @articles = Article.all
   def index
     @articles = Article.all
   end
+  def latest
+    redirect_to "/articles"
+  end
   def show
-    @articles = Article.all
     @article = Article.find(params[:id])
   end
   def new
-    @articles = Article.all
     @article = Article.new
   end
   def create
@@ -21,12 +21,10 @@ class ArticlesController < ApplicationController
     end
   end
   def edit
-    @articles = Article.all
     @article = Article.find(params[:id])
   end
   def destroy
     @article = Article.find(params[:id])
-    puts @article
     @article.destroy
 
     redirect_to root_path
