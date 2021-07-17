@@ -5,6 +5,11 @@ application up and running.
 
 Things you may want to cover:
 
+git clone https://github.com/actualquak/Rails-School-Website
+cd Rails-School-Website
+bundle install
+yarn install
+
 * Ruby version
 
 * System dependencies

@@ -5,9 +5,9 @@ Rails.application.routes.draw do
     get "/signup", to: 'devise/registrations#new'
   end
   devise_for :users, :controllers => {:registrations => "registrations"}
+  resources :articles
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "articles#index"
-  get "/index", to: "articles#index"
   get "/tour", to: "pages#tour"
   get "/map", to: "pages#map"
 end

@@ -33,9 +33,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <% @articles.each do |article| %>
-
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><%= link_to article.title, article, class: "dropdown-item" %></li>
             <% end %>
             <li><hr class="dropdown-divider"></li>
             <li><%= link_to "Full list", "/index", class: "dropdown-item" %></li>
