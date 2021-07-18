@@ -6,13 +6,13 @@ This is a rewrite of our school project from the ground up to use bootstrap and 
 Because it is less effort for a superior result
 
 ##How can I view this website?
-Download this repo, cd into yoooolin/view and run `python -m http.server` then go to `http://127.0.0.1:8000` (or whatever your url is) and it should show a demo.
+Download this repo, cd into FRANKLIN/website-snapshot and run `python -m http.server` then go to `http://127.0.0.1:8000` (or whatever your url is) and it should show a demo.
 
 ##But where did my css go?
 In no particular order:
- * The information page was unweildy and not designed well for ruby
+ * The information page was unwieldy and not designed well for ruby
  * The landing page was preventing people from getting to the content of our webpage immediately, however this could be brought back
- * The navbar was unweildy from a backend perspective, and not suited to navigating between multiple urls (something we are now doing)
+ * The navbar was unwieldy from a backend perspective, and not suited to navigating between multiple urls (something we are now doing)
  * The navbar also took up too much room, especially on mobile
  * The animations for switching pages do not support multiple urls (once again, something we are now doing)
  * Keeping the css would, to be honest, require more work than redoing from scratch with bootstrap for a superior result
@@ -30,7 +30,7 @@ Yes, but
  * Map is for the School Map linking to the School View (`/map`)
  * Articles is to access the articles (`/articles/[article number]`, `/articles`)
  * Forum is for the forum I want to add (`/forum`)
-THIS ALL WORKS ON MOBILE
+THIS ALL WORKS ON MOBILE (EXCEPT PANNELLUM)
 
 ##Accounts? Forums? Comments?
 These have three purposes:
@@ -51,5 +51,6 @@ Shorthand for yoooo, Franklin.
 
 #How to write articles
 1. Follow the *How can I view this website* above.
-2. Put the article inside the `div` with id `YOOOOLIN, add articles here` (and only inside), don't edit anything else
-3. Send me the html that you put inside
+2. There should be two `div`s - one with `FRANKLIN, PUT THE TITLE HERE!` inside and one with `FRANKLIN, PUT THE CONTENT HERE!`.
+3. Put the title inside the first div, and the content inside the second. IMPORTANT - DON'T EDIT ANYTHING OUTSIDE OF THOSE DIVS!
+4. Send me the html that you put inside, as well as the title

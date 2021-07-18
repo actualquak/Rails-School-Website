@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RailsSchoolWebsite</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="V2_y4wEsVan5I5K2o_RbA_UaP8BWk0eouoZbaDGkiZ_pR8pwW2fkHdBQrrw5e_UrK0MRveMxPDj1VChGzsusVQ" />
+
+
+    <link rel="stylesheet" media="all" href="/assets/application.debug-e0418b409b0deb19ff62fc7e7113e9b1e29113ccb0ae6ceb9166365cf29c86f9.css" data-turbolinks-track="reload" />
+    <script src="/packs/js/application-e421b4aa3f716bebdab1.js" data-turbolinks-track="reload"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="/signin">Log in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/signup">Sign up</a>
+          </li>
+        <li>
+          <a class="nav-link active" href="/tour">Tour</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/map">Map</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Articles
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/articles/1">test 1</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/articles">Full list</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/forum">Forum</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+    <div class="container">
+  <div class="row">
+    <div class=".col-md-6 .col-sm-offset-3">
+      <div class="title">
+        <h1>FRANKLIN, PUT THE TITLE HERE!</h1>
+      </div>
+      <div class="content">
+        <p>FRANKLIN, PUT THE CONTENT HERE!</p>
+      </div>
+        <a href="/articles/1/edit">Edit</a>
+        <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/articles/1">Destroy</a><br><br>
+      <div class="comments">
+        <h2>Comments:</h2>
+          <p></p>
+          <p></p>
+          <p>{&quot;content&quot;=&gt;&quot;test&quot;}</p>
+          <p>test</p>
+        <h2>Add a comment:</h2>
+        <form role="form" action="/articles/1/article_comments" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="-cwXqQtM2Tt_DOVwmVIXH_U_cHbCEdJ3BYolz4RQH1m3bzNpWQ8eixuTwMO_vsNjeaB5-lzI3D_tJQ-0lCWTWA" />
+          <div class="form-group"><label for="article_comment_content">Content</label><input placeholder="body" class="form-control form-control" type="text" name="article_comment[content]" id="article_comment_content" /></div>
+          <input type="submit" name="commit" value="Post comment" class="btn btn-secondary" data-disable-with="Post comment" />
+</form>      </div>
+    </div>
+  </div>
+</div>
+
+  <script async type="text/javascript" id="mini-profiler" src="/mini-profiler-resources/includes.js?v=8cccf9fed3d62814b1d70f252554501b" data-css-url="/mini-profiler-resources/includes.css?v=8cccf9fed3d62814b1d70f252554501b" data-version="8cccf9fed3d62814b1d70f252554501b" data-path="/mini-profiler-resources/" data-current-id="xyqoktq6dglfq5zxa739" data-ids="xyqoktq6dglfq5zxa739" data-horizontal-position="left" data-vertical-position="top" data-trivial="false" data-children="false" data-max-traces="20" data-controls="false" data-total-sql-count="false" data-authorized="true" data-toggle-shortcut="alt+p" data-start-hidden="false" data-collapse-results="true" data-html-container="body" data-hidden-custom-fields=""></script>
+</body>
+</html>
