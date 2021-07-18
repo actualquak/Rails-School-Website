@@ -40,9 +40,10 @@ ActiveRecord::Schema.define(version: 2021_07_18_095516) do
     t.string "title"
     t.string "content"
     t.integer "user_id"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["content"], name: "index_posts_on_content"
+    t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
