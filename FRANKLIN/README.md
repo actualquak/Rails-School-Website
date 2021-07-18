@@ -61,7 +61,7 @@ I know what this is idiot and I hate it. What is this Q/A for? To explain why I 
 ## Points
 ### 1. This will take too much time and effort
 ### 2. This won't bring much more than we already have
-### 3. You're making approx 5000 min (Class time + homework time + robot club) of past work amount to nothing. 
+### 3. You're making approx 5000 min (Class time + homework time + robot club) of past work amount to nothing.
 
 ## Rebuttal - My response to your points
 ### Why did you rewrite our school website?
@@ -148,4 +148,3 @@ It's a css library, like material, except more popular.
 
 ## Conclusion
 I am going to make my repository what I am developing on, not this. The only condition that would break this is if we were to come to agree on a common ground. This is unlikekly, and I would like to see what happens with you on your own. Bye.
-
