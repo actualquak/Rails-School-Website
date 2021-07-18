@@ -46,11 +46,10 @@ It's a css library, like material, except more popular.
  * Make the map feature.
  * Follow the guide below on how to write articles.
 
-## yoooolin?
-Shorthand for yoooo, Franklin.
-
-# How to write articles
+### How to write articles
 1. Follow the *How can I view this website* above.
 2. There should be two `div`s - one with `FRANKLIN, PUT THE TITLE HERE!` inside and one with `FRANKLIN, PUT THE CONTENT HERE!`.
 3. Put the title inside the first div, and the content inside the second. IMPORTANT - DON'T EDIT ANYTHING OUTSIDE OF THOSE DIVS!
 4. Send me the html that you put inside, as well as the title
+
+## If you need anything else, send me an email. I'll check my email. Probably.
