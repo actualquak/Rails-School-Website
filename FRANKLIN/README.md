@@ -66,6 +66,7 @@ I know what this is idiot and I hate it. What is this Q/A for? To explain why I 
 ## Rebuttal - My response to your points
 ### Why did you rewrite our school website?
 Because it is less effort for a superior result
+
 **Reply:** Baseless for starters, no reasoning. Superior result? Looks bad. Less effort? Bit late now + having to do major revamping of info page + back-end monstrosity of accounts and forum and comments + rewriting most of the website
 
 ### But where did my css go?
@@ -76,6 +77,8 @@ In no particular order:
  * The navbar also took up too much room, especially on mobile
  * The animations for switching pages do not support multiple urls (once again, something we are now doing)
  * Keeping the css would, to be honest, require more work than redoing from scratch with bootstrap for a superior result
+
+
 **Reply:** In no particular order:
 * Sure, but this means we are deleting a term's work + priortising a framework that Mr. Harrison will give up downloading + have to create an entirely new info page (will take more than time that we have)
 * Look, I thought you wanted the starting page
@@ -89,6 +92,8 @@ Yes, but
  * It supports mobile
  * It is easily expandable
  * I can add a theme to make it better easily
+
+
 **Reply:** Yes, but
 * So what
 * So what
@@ -103,6 +108,7 @@ Yes, but
  * Articles is to access the articles (`/articles/[article number]`, `/articles`)
  * Forum is for the forum I want to add (`/forum`)
 THIS ALL WORKS ON MOBILE (EXCEPT PANNELLUM)
+
 **Reply:** We don't need this, as I will show in my next rebuttal point. We also shouldn't care about mobile as I have shown earlier.
 
 
@@ -111,6 +117,8 @@ These have three purposes:
  * To flex our database to earn more marks
  * To become a social media service, as every website must eventually become
  * To collect emails
+
+
 **Reply:** This will take way too much time that we don't have and:
 * All we're doing is removing website marks for looks and adding them for backend. We can also use a db anyway without all theis massive change
 * Social media is inethical, and we don't need it, you have said this before making you a hypocrite that has worse values than Mark Zuckerburg and Tim Cook combined. Sorry, but it seems so: at least they weren't hypocrites.
@@ -118,12 +126,15 @@ These have three purposes:
 
 ### Bootstrap?
 It's a css library, like material, except more popular.
+
 **Reply:** I know what it is, and its not worth it: it would be **IF WE HAD TIME**
 
 ### What can I do on the project?
  * Continue updating streetview.js.
  * Make the map feature.
  * Follow the guide below on how to write articles.
+
+
 **Reply:** I don't really want to work on this project anymore.
 
 ### How to write articles
@@ -131,6 +142,8 @@ It's a css library, like material, except more popular.
 2. There should be two `div`s - one with `FRANKLIN, PUT THE TITLE HERE!` inside and one with `FRANKLIN, PUT THE CONTENT HERE!`.
 3. Put the title inside the first div, and the content inside the second. IMPORTANT - DON'T EDIT ANYTHING OUTSIDE OF THOSE DIVS!
 4. Send me the html that you put inside, as well as the title
+
+
 **Reply:** See last reply.
 
 ## Conclusion
