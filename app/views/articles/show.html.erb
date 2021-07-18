@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class=".col-md-6 .col-sm-offset-3">
-      <div class="title">
+      <div class="title text-center">
         <h1><%= @article.title %></h1>
       </div>
       <div class="content">
@@ -12,12 +12,14 @@
                               method: :delete,
                               data: { confirm: "Are you sure?" } %><br><br>
       <div class="comments">
-        <h2>Comments:</h2>
         <% set_article_comments( article: @article.id ) %>
+        <% if @article_comments.length != 0 %>
+        <h3>Comments:</h3>
+        <% end %>
         <% @article_comments.each do |article_comment| %>
           <p><%= article_comment.content %></p>
         <% end %>
-        <h2>Add a comment:</h2>
+        <h3>Add a comment:</h3>
         <%= bootstrap_form_with model: [ @article, @article.article_comments.build ] do |form| %>
           <%= form.text_field :content,
                               placeholder: "body",
