@@ -16,7 +16,7 @@ class ArticleCommentsController < ApplicationController
         redirect_to @article
       end
     else
-      redirect_to "/signup"
+      redirect_to "/new-profile"
     end
   end
 
