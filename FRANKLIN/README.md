@@ -54,7 +54,10 @@ It's a css library, like material, except more popular.
 
 ## If you need anything else, send me an email. I'll check my email. Probably.
 
-# Q/A - For Stanley
+# Q/A - For Stanley - Read not below
+## Note that:
+I'm keeping this for archival purposes. Stanley and I have resolved over this matter, and have found common ground. 
+
 ## What's this?
 I know what this is idiot and I hate it. What is this Q/A for? To explain why I am angry. Because I am fuming, I will present this as a stuctured case - debating vibes.
 
@@ -148,3 +151,12 @@ It's a css library, like material, except more popular.
 
 ## Conclusion
 I am going to make my repository what I am developing on, not this. The only condition that would break this is if we were to come to agree on a common ground. This is unlikekly, and I would like to see what happens with you on your own. Bye.
+
+# Common ground
+See previous conclusion and note in previous section. Reading those sections will help you realise what common ground means. 
+
+## Submission
+We will be submitting 2 websites - the old one which had no proper back-end and wasn't really great (which we spent lots of work on), and the new one which has proper back-end and is cool (which is probably worth more marks). We are still working out how Mr. Harrison is going to view the website, but it seems to be using GitHub Student to unlock cloud hosting. 
+
+## Workload allocation
+Kashyap's work has not changed. Franklin is now tasked with entering data - for the panorama, and for the articles. He also needs to work on the branding for the website: show how much work Stanley put in for the back end among other things. If he has time then he will work on styling the website so that it looks cool. Stanley will be awesome and use Ruby on Rails to do cool stuff which is afore mentioned, and if he has time will join Franklin in his tasks. 
