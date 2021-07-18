@@ -11,14 +11,14 @@
             <%= link_to "Log out", "/signout", class: "nav-link active" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Settings", "/setttings", class: "nav-link disabled" %>
+            <%= link_to "Settings", "/edit-profile", class: "nav-link active" %>
           </li>
         <% else %>
           <li class="nav-item">
             <%= link_to "Log in", "/signin", class: "nav-link active" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Sign up", "/signup", class: "nav-link active" %>
+            <%= link_to "Sign up", "/new-profile", class: "nav-link active" %>
           </li>
         <% end %>
         <li>
