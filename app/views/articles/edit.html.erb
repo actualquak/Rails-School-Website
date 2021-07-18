@@ -15,7 +15,7 @@
         <% @article.errors.full_messages_for(:content).each do |message| %>
           <div><%= message %></div>
         <% end %>
-        <%= form.submit 'Edit Article', class: 'btn sign-up-button' %>
+        <%= form.submit 'Edit Article' %>
       <% end %>
     </div>
   </div>

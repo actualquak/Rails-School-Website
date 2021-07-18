@@ -1,7 +1,30 @@
-<h1><%= @article.title %></h1>
-<p><%= @article.content %></p>
-
-<%= link_to "Edit", edit_article_path(@article) %>
-<%= link_to "Destroy", "/articles/#{@article.id}",
-                      method: :delete,
-                      data: { confirm: "Are you sure?" } %>
+<div class="container">
+  <div class="row">
+    <div class=".col-md-6 .col-sm-offset-3">
+      <div class="title">
+        <h1><%= @article.title %></h1>
+      </div>
+      <div class="content">
+        <p><%= @article.content %></p>
+      </div>
+        <%= link_to "Edit", edit_article_path(@article) %>
+        <%= link_to "Destroy", article_path(@article),
+                              method: :delete,
+                              data: { confirm: "Are you sure?" } %><br><br>
+      <div class="comments">
+        <h2>Comments:</h2>
+        <% set_article_comments( article: @article.id ) %>
+        <% @article_comments.each do |article_comment| %>
+          <p><%= article_comment.content %></p>
+        <% end %>
+        <h2>Add a comment:</h2>
+        <%= bootstrap_form_with model: [ @article, @article.article_comments.build ] do |form| %>
+          <%= form.text_field :content,
+                              placeholder: "body",
+                              class: "form-control" %>
+          <%= form.submit 'Post comment' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
