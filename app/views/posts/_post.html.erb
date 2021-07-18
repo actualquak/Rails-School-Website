@@ -1,11 +1,8 @@
-<div class="col-sm-9" id=<%= post_path(post.id) %>>
-  <div class="card">
-    <div class="card-block">
-      <div class="post-content">
-        <div class="posted-by"><%= "dummy" %></div>
-        <h3 style="white-space: pre; overflow: hidden; text-overflow: ellipsis; width:100%;" class="postTitleLimitedWidth"><%= truncate(post.title, :length => 50)%></h3>
-        <%= link_to "Full Post", post_path(post.id) %>
-      </div>
+<div class="card" id=<%= post_path(post.id) %>>
+  <div class="card-block">
+    <div class="post-content">
+      <div class="posted-by"><%= "dummy" %></div>
+      <h3 style="white-space: pre; overflow: hidden; text-overflow: ellipsis; width:100%;" class="postTitleLimitedWidth"><%= link_to truncate(post.title, :length => 50), post_path(post.id) %></h3>
     </div>
   </div>
 </div>
