@@ -10,9 +10,17 @@ Rails.application.routes.draw do
   resources :articles do
     resources :article_comments
   end
+  resources :posts do
+    collection do
+      get 'hobby'
+      get 'study'
+      get 'team'
+    end
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "articles#latest"
   get "/articles", to: "articles#index"
   get "/tour", to: "pages#tour"
   get "/map", to: "pages#map"
+  get "/forum", to: "pages#forum"
 end
