@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row">
     <div class=".col-md-6 .col-sm-offset-3">
-      <% get_comments_by_article_id article_id: nil %>
+      <% get_comments_by_article_id article_id: article_id %>
       <%= comments_tree_for @comments %>
     </div>
   </div>
 </div>
+<div class="mb-4"></div>

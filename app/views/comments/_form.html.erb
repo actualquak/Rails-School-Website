@@ -9,6 +9,7 @@
       </ul>
     </div>
   <% end %>
+  <%= f.hidden_field :article_id, value: 1 %>
   <%= f.hidden_field :parent_id %>
   <div class="form-group">
     <%= f.text_area :content, class: 'form-control', required: true, hide_label: true %>
