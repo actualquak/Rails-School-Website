@@ -1,8 +1,4 @@
 class ArticleCommentsController < ApplicationController
-  def new
-    @article_comment = ArticleComment.new
-  end
-
   def create
     @article = Article.find(params[:article_id])
     if user_signed_in?
@@ -19,7 +15,6 @@ class ArticleCommentsController < ApplicationController
       redirect_to "/new-profile"
     end
   end
-
   private
     def comment_params
       params.require(:article_comment).permit(:content)
