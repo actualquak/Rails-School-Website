@@ -1,12 +1,9 @@
 class CommentsController < ApplicationController
   def index
-    @comments = Comment.hash_tree limit_depth: 3
-
   end
   def new
     @comment = Comment.new(parent_id: params[:parent_id])
   end
-
   def create
     if params[:comment][:parent_id].to_i > 0
       parent = Comment.find_by_id(params[:comment].delete(:parent_id))
