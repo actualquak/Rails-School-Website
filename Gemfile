@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'bootstrap_form'
 gem 'faker'
+gem 'closure_tree'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

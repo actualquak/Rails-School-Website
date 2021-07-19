@@ -10,17 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_19_024444) do
-
-  create_table "article_comments", force: :cascade do |t|
-    t.text "content"
-    t.integer "article_id", null: false
-    t.integer "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["article_id"], name: "index_article_comments_on_article_id"
-    t.index ["user_id"], name: "index_article_comments_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2021_07_19_044718) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -36,12 +26,19 @@ ActiveRecord::Schema.define(version: 2021_07_19_024444) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "comment_hierarchies", id: false, force: :cascade do |t|
+    t.integer "ancestor_id", null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations", null: false
+    t.index ["ancestor_id", "descendant_id", "generations"], name: "comment_anc_desc_udx", unique: true
+    t.index ["descendant_id"], name: "comment_desc_idx"
+  end
+
   create_table "comments", force: :cascade do |t|
-    t.text "body"
-    t.integer "commentable_id"
-    t.string "commentable_type"
+    t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "parent_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -69,6 +66,4 @@ ActiveRecord::Schema.define(version: 2021_07_19_024444) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "article_comments", "articles"
-  add_foreign_key "article_comments", "users"
 end

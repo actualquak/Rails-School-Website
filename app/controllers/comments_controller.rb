@@ -1,52 +1,42 @@
 class CommentsController < ApplicationController
-  before_action :find_commentable
-  def new
-    @comment = Comments.new
+  def index
+    @comments = Comment.hash_tree limit_depth: 3
+
   end
+  def new
+    @comment = Comment.new(parent_id: params[:parent_id])
+  end
+
   def create
-    @comment = @commentable.comments.new comment_params
-    @comment.User = current_user
-    if user_signed_in?
-      if @comment.save
-        redirect_back fallback_location: "/"
-      else
-        redirect_back fallback_location: "/"
-        flash[:warning] = "Something went wrong!"
-      end
+    if params[:comment][:parent_id].to_i > 0
+      parent = Comment.find_by_id(params[:comment].delete(:parent_id))
+      @comment = parent.children.build(comment_params)
     else
-      redirect_back fallback_location: "/"
-      flash[:warning] = "Log in first!"
+      @comment = Comment.new(comment_params)
+    end
+
+    if @comment.save
+      flash[:success] = 'Your comment was successfully added!'
+      redirect_to root_path
+    else
+      render 'new'
     end
   end
   def edit
-    @comment = @commentable.comments.find(params[:id])
+    @comment = Comment.find(params[:id])
   end
   def update
-    @comment = @commentable.comments.find(params[:id])
+    @comment = Comment.find(params[:id])
 
     if @comment.update(comment_params)
-      redirect_back fallback_location: "/"
+      redirect_to root_path
     else
-      redirect_back fallback_location: "/"
-      flash[:warning] = "Something went wrong"
-    end
-  end
-  def destroy
-    @comment = @commentable.comments.find(params[:id])
-
-    if @comment.destroy
-      redirect_back fallback_location: "/"
-    else
-      redirect_back fallback_location: "/"
-      flash[:warning] = "Something went wrong"
+      render 'edit'
     end
   end
   private
+
     def comment_params
-      params.require(:comment).permit(:body)
-    end
-    def find_commentable
-      @commentable = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
-      @commentable = Article.find_by_id(params[:article_id]) if params[:article_id]
+      params.require(:comment).permit(:content)
     end
 end
