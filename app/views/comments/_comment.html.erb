@@ -1,14 +1,17 @@
-<li>
-  <%= comment.body %> -
-  <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
+<div class="card">
+  <div class="card-block">
+    <div class="ms-4 my-2">
+    <%= comment.body %> <br>
+    <small>- Submitted <%= time_ago_in_words(comment.created_at) %> ago by <%= "dummy" %></small>
 
-  <%= bootstrap_form_for [comment, Comment.new] do |f| %>
-      <%= f.text_area :body, placeholder: "Add a Reply" %><br/>
-      <%= f.submit "Reply" %>
-      <% end %>
+    <%= bootstrap_form_for [comment, Comment.new] do |f| %>
+        <%= f.text_area :body, placeholder: "Add a Reply", hide_label: true %>
+        <%= f.submit "Reply", class: "btn btn-secondary mb-3" %>
+    <% end %>
 
-  <ul>
+    <ul>
       <%= render partial: 'comments/comment', collection: comment.comments %>
-  </ul>
-
-</li>
+    </ul>
+    </div>
+  </div>
+</div>

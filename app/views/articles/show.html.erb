@@ -14,49 +14,19 @@
                                 data: { confirm: "Are you sure?" } %>
       <% end %>
       <div class="comments">
-        <% set_article_comments( article: @article.id ) %>
-        <% if @article_comments.length != 0 %>
-          <h3>Comments:</h3>
+        <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
         <% end %>
-        <% @article_comments.each do |article_comment| %>
-          <div class="card">
-            <div class="card-block">
-              <div class="comment-content">
-                <% get_user user: article_comment.user_id %>
-                <p class="text-secondary mt-4 mx-5"><%= @user.name %></p>
-                <p class="mx-5"><%= article_comment.content %></p>
-              </div>
-            </div>
-          </div>
+        <%= link_to(@article.title, "/article/#{@article.id}", target: "_blank") %> -
+        <small>Submitted <%= time_ago_in_words(@article.created_at) %> ago</small>
+        <h3 class="mt-3">Comments:</h3>
+        <%= bootstrap_form_for [@article, Comment.new] do |f| %>
+          <%= f.text_area :body, placeholder: "Add a comment", hide_label: true, class: "form-control" %><br/>
+          <%= f.submit "Add Comment", class: "btn btn-secondary mb-3" %>
         <% end %>
-        <% if user_signed_in? %>
-          <h3 class="mt-5 mb-2">Post a comment:</h3>
-          <%= bootstrap_form_with model: [ @article, @article.article_comments.build ] do |form| %>
-            <%= form.text_field :content,
-                                placeholder: "body",
-                                class: "form-control" %>
-            <%= form.submit 'Post comment' %>
-          <% end %>
-        <% else %>
-          <h3 class="mt-5 mb-2">Log in to post a comment</h3>
-        <% end %>
+        <%= render(partial: 'comments/comment', collection: @article.comments) %>
         <div class="mb-4"></div>
       </div>
     </div>
   </div>
 </div>
-
-<div>
-  <%= link_to(@article.title, "/article/#{@article.id}", target: "_blank") %><br/>
-  <small>Submitted <%= time_ago_in_words(@article.created_at) %> ago</small>
-
-  <h3>Comments</h3>
-
-  <%= bootstrap_form_for [@article, Comment.new] do |f| %>
-    <%= f.text_area :body, placeholder: "Add a comment" %><br/>
-    <%= f.submit "Add Comment" %>
-  <% end %>
-
-  <ul>
-    <%= render(partial: 'comments/comment', collection: @article.comments) %>
-  </ul>
