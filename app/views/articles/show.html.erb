@@ -2,7 +2,7 @@
   <div class="row">
     <div class=".col-md-6 .col-sm-offset-3">
       <div class="title text-center">
-        <h1><%= @article.title %></h1>
+        <h1 class="text-primary"><%= @article.title %></h1>
       </div>
       <div class="content">
         <p><%= @article.content %></p>
@@ -17,9 +17,17 @@
         <h3>Comments:</h3>
         <% end %>
         <% @article_comments.each do |article_comment| %>
-          <p><%= article_comment.content %></p>
+          <div class="card">
+            <div class="card-block">
+              <div class="comment-content">
+                <% get_user user: article_comment.user_id %>
+                <p class="text-secondary mt-4 mx-5"><%= @user.name %></p>
+                <p class="mx-5"><%= article_comment.content %></p>
+              </div>
+            </div>
+          </div>
         <% end %>
-        <h3>Add a comment:</h3>
+        <h3 class="mt-5 mb-2">Add a comment:</h3>
         <%= bootstrap_form_with model: [ @article, @article.article_comments.build ] do |form| %>
           <%= form.text_field :content,
                               placeholder: "body",
