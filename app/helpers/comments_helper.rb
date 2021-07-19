@@ -8,4 +8,7 @@ module CommentsHelper
   def get_comment_tree
     @comments = Comment.hash_tree
   end
+  def get_comments_by_article_id article_id: nil
+    @comments = Comment.where(article_id: article_id).hash_tree
+  end
 end
