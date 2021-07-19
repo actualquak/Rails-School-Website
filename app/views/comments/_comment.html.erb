@@ -9,5 +9,8 @@
   <% unless from_reply_form %>
     <%= link_to 'Reply', new_comment_path(comment.id) %>
     <%= link_to 'Edit', edit_comment_path(comment.id) %>
+    <%= link_to "Destroy", comment_path(comment),
+                          method: :delete,
+                          data: { confirm: "Are you sure?" } %>
   <% end %>
 </div>
