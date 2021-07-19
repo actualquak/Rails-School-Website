@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :must_be_admin, only: [ :edit, :destroy, :new, :create, :update ]
   def index
   end
   def latest
@@ -40,5 +41,10 @@ class ArticlesController < ApplicationController
   private
     def article_params
       params.require(:article).permit(:title, :content)
+    end
+    def must_be_admin
+      unless current_user && current_user.try(:admin?)
+        redirect_to root_path, notice: "HEY DON'T DO THAT"
+      end
     end
 end

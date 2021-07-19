@@ -6,7 +6,9 @@
       <% @articles.each do |article| %>
         <h3><%= link_to article.title, article, class: "dropdown-item text-primary article-index" %></h5>
       <% end %>
-      <%= link_to "new", "/articles/new" %>
+      <% if current_user.try(:admin?) %>
+        <%= link_to "new", "/articles/new" %>
+      <% end %>
     </div>
   </div>
 </div>
