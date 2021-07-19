@@ -54,6 +54,17 @@ def seed_posts
   end
 end
 
+def seed_admin
+  User.create(
+    name: "admin",
+    email: "admin@test.com",
+    password: "nths-admin",
+    password_confirmation: "nths-admin",
+    admin: true
+  )
+end
+
 seed_users
 seed_categories
 seed_posts
+seed_admin
