@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     user = current_user
-    if user.id == @comment.user_id
+    if user.id == @comment.user_id or user.admin
       if @comment.update(comment_params)
         redirect_to root_path
       else
@@ -51,7 +51,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     user = current_user
-    if user.id == @comment.user_id
+    if user.id == @comment.user_id or user.admin
       if @comment.destroy
         redirect_to root_path
       end

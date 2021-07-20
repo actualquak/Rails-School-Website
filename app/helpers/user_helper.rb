@@ -5,4 +5,8 @@ module UserHelper
   def get_user_name(id:)
     User.find(id).name
   end
+  def admin?
+    user = current_user
+    user.admin
+  end
 end

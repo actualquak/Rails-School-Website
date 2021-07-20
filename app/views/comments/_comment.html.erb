@@ -10,7 +10,7 @@
     <nav>
     <% if user_signed_in? %>
       <% user = current_user %>
-      <% if comment.user_id == user.id %>
+      <% if comment.user_id == user.id or admin? %>
         <%= link_to 'Reply', new_comment_path(comment.id), class: "btn btn-primary ms-2 mb-2" %>
         <%= link_to 'Edit', edit_comment_path(comment.id), class: "btn btn-secondary mx-2 mb-2"%>
         <%= link_to "Destroy", comment_path(comment),

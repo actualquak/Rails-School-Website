@@ -9,7 +9,7 @@
         <% @article.errors.full_messages_for(:title).each do |message| %>
           <div><%= message %></div>
         <% end %>
-        <%= form.text_field :content,
+        <%= form.text_area :content,
                           placeholder: 'content',
                           class: 'form-control' %>
         <% @article.errors.full_messages_for(:content).each do |message| %>
