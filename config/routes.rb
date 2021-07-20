@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get "/articles", to: "articles#index"
   get "/tour", to: "pages#tour"
   get "/map", to: "pages#map"
-  get "/forum", to: "pages#forum"
+  get "/forum", to: "posts#index"
   resources :comments, only: [:index, :create, :update, :edit, :destroy]
   get '/comments/new/(:parent_id)', to: 'comments#new', as: :new_comment
 end

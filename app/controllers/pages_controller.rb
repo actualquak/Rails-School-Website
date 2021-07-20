@@ -3,6 +3,4 @@ class PagesController < ApplicationController
   end
   def map
   end
-  def forum
-  end
 end

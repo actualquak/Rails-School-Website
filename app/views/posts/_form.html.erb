@@ -1,0 +1,18 @@
+<%= bootstrap_form_for(@post) do |f| %>
+  <%= f.text_field  :title,
+                    minlength: 4,
+                    maxlength: 128,
+                    placeholder: 'Title',
+                    class: 'form-control mt-3',
+                    hide_label: true,
+                    required: true %>
+  <%= f.text_area :content,
+                  rows: 6,
+                  required: true,
+                  minlength: 4,
+                  maxlength: 512,
+                  placeholder: 'Body',
+                  hide_label: true,
+                  class: 'form-control' %>
+  <%= f.submit "Post", class: 'form-control btn btn-primary btn-block' %>
+<% end %>

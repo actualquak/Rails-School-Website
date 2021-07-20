@@ -1,0 +1,16 @@
+<%= bootstrap_form_with model: @article do |form| %>
+  <%= form.text_field :title,
+                    placeholder: 'title',
+                    class: 'form-control' %>
+  <% @article.errors.full_messages_for(:title).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+  <%= form.text_area :content,
+                    placeholder: 'content',
+                    class: 'form-control',
+                    rows: 20 %>
+  <% @article.errors.full_messages_for(:content).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+  <%= form.submit 'Post' %>
+<% end %>

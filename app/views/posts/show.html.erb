@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <p class="text-secondary"><%= @user.name %></p>
+      <div class="text-muted">Added by <%= @user.name %> on <%= l(@post.created_at, format: '%B, %d %Y %H:%M:%S') %> - <%= link_to "Edit", "/posts/#{@post.id}/edit" %></div>
       <h2 class="text-primary text-wrap text-break"><%= @post.title %></h2>
       <p class="text-wrap text-break mx-4" style="word-break: break-word"><%= @post.content %></p>
     </div>

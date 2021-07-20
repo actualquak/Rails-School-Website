@@ -2,7 +2,7 @@
 <div class="card" id=<%= post_path(post.id) %>>
   <div class="card-block">
     <div class="post-content">
-      <div class="posted-by mx-5 mt-2"><%= @user.name %></div>
+      <div class="text-muted mx-5 mt-2">Added by <%= @user.name %> on <%= l(post.created_at, format: '%B, %d %Y %H:%M:%S') %></div>
       <h4 class="mx-5 mb-2"><div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width:100%;" ><%= link_to truncate(post.title, :length => 100), post_path(post.id) %></div></h4>
     </div>
   </div>

@@ -31,6 +31,7 @@ gem 'devise'
 gem 'bootstrap_form'
 gem 'faker'
 gem 'closure_tree'
+#gem 'will_paginate', '~> 3.1.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
