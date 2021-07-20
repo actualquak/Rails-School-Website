@@ -9,8 +9,10 @@
       </ul>
     </div>
   <% end %>
-  <%= f.hidden_field :article_id, value: 1 %>
+  <%= f.hidden_field :article_id, value: params[:article_id] %>
   <%= f.hidden_field :parent_id %>
+  <% url = request.fullpath %>
+  <%= f.hidden_field :return_url, value: params[:return_url] %>
   <div class="form-group">
     <%= f.text_area :content, class: 'form-control', required: true, hide_label: true %>
   </div>

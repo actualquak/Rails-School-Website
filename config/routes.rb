@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :posts
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: "comments#index"
+  root to: "articles#index"
   get "/articles", to: "articles#index"
   get "/tour", to: "pages#tour"
   get "/map", to: "pages#map"

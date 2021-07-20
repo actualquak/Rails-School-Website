@@ -1,6 +1,4 @@
 class CommentsController < ApplicationController
-  def index
-  end
   def new
     if user_signed_in?
       @comment = Comment.new(parent_id: params[:parent_id])
@@ -22,7 +20,7 @@ class CommentsController < ApplicationController
       @comment.user_id = user.id
       if @comment.save!
         flash[:success] = 'Your comment was successfully added!'
-        redirect_to root_path
+        redirect_to params[:comment][:return_url]
       else
         render 'new'
       end
@@ -41,8 +39,8 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     user = current_user
     if user.id == @comment.user_id or user.admin
-      if @comment.update(comment_params)
-        redirect_to root_path
+      if @comment.update(edit_comment_params)
+        redirect_to params[:comment][:return_url]
       else
         render 'edit'
       end
@@ -53,12 +51,15 @@ class CommentsController < ApplicationController
     user = current_user
     if user.id == @comment.user_id or user.admin
       if @comment.destroy
-        redirect_to root_path
+        redirect_to params[:comment][:return_url]
       end
     end
   end
   private
     def comment_params
       params.require(:comment).permit(:content, :article_id)
+    end
+    def edit_comment_params
+      params.require(:comment).permit(:content)
     end
 end
