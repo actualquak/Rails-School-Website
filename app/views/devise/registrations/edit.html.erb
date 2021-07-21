@@ -23,10 +23,12 @@
 
         <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
         <%= f.password_field :current_password, autocomplete: "current-password" %>
+        <div class="btn-group-vertical mt-3" role="group" style="width:100%">
         <%= f.submit "Update", class: "btn btn-success" %>
       <% end %>
         <%= link_to "Back", :back, class: "btn btn-secondary btn-block btn-lg" %>
         <%= button_to "Delete my Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
+      </div>
     </div>
   </div>
 </div>

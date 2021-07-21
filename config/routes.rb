@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   devise_scope :user do
-    get "/signout", to: 'devise/sessions#destroy', as: :signout
-    get "/signin", to: 'devise/sessions#new'
-    get "/new-profile", to: 'devise/registrations#new'
-    get "/edit-profile", to: 'devise/registrations#edit'
-    get "/delete-profile", to: 'devise/registrations#destroy'
+    get "/users/sign_out", to: "devise/sessions#destroy", as: :signout
   end
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :articles

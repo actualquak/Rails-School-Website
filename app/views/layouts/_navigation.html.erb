@@ -8,17 +8,17 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Log out", "/signout", class: "nav-link active" %>
+            <%= link_to "Logout", destroy_user_session_path, class: "nav-link active" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Settings", "/edit-profile", class: "nav-link active" %>
+            <%= link_to "Settings", edit_user_registration_path, class: "nav-link active" %>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Log in", "/signin", class: "nav-link active" %>
+            <%= link_to "Log in", new_user_session_path, class: "nav-link active" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Sign up", "/new-profile", class: "nav-link active" %>
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link active" %>
           </li>
         <% end %>
         <li>
