@@ -2,7 +2,12 @@ class PostsController < ApplicationController
   before_action :redirect_if_not_signed_in, only: [:new, :create, :edit, :update]
   def show
     @post = Post.find(params[:id])
-    @show_edit = true
+    user = current_user
+    if defined?(user.id)
+      if @post.user_id == user.id or user.admin
+        @show_edit = true
+      end
+    end
   end
   def new
     @post = Post.new

@@ -45,7 +45,7 @@
         </li>
       </ul>
       <% pageurl = request.fullpath %>
-      <% if pageurl.start_with?("/posts") %>
+      <% if pageurl.start_with?("/posts") and user_signed_in? %>
       <ul class="navbar-nav">
         <li class="nav-item">
           <%= link_to "New Post", "/posts/new", class: "nav-link active text-primary me-2" %>
