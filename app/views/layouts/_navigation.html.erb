@@ -41,9 +41,29 @@
           </ul>
         </li>
         <li class="nav-item">
-          <%= link_to "Forum", "/forum", class: "nav-link active" %>
+          <%= link_to "Forum", "/posts", class: "nav-link active" %>
         </li>
       </ul>
+      <% pageurl = request.fullpath %>
+      <% if pageurl.start_with?("/posts") %>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "New Post", "/posts/new", class: "nav-link active text-primary me-2" %>
+        </li>
+        <% if defined?(@show_edit) %>
+          <li class="nav-item">
+            <%= link_to "Edit", edit_post_path(@post), class: "nav-link active text-primary me-2" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Destroy", post_path(@post),
+                                  method: :delete,
+                                  data: { confirm: "Are you sure?" },
+                                  class: "nav-link active text-primary me-2",
+                                  return_url: request.fullpath %>
+          </li>
+        <% end %>
+      </ul>
+      <% end %>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>

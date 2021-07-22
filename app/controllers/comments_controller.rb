@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     if user_signed_in?
       @comment = Comment.new(parent_id: params[:parent_id])
     else
-      redirect_to '/new-profile'
+      redirect_to new_user_registration_path
     end
   end
   def create
@@ -18,21 +18,21 @@ class CommentsController < ApplicationController
       end
       user = current_user
       @comment.user_id = user.id
-      if @comment.save!
+      if @comment.save
         flash[:success] = 'Your comment was successfully added!'
         redirect_to params[:comment][:return_url]
       else
         render 'new'
       end
     else
-      redirect_to '/new-profile'
+      redirect_to new_user_registration_path
     end
   end
   def edit
     if user_signed_in?
       @comment = Comment.find(params[:id])
     else
-      redirect_to '/new-profile'
+      redirect_to new_user_registration_path
     end
   end
   def update
