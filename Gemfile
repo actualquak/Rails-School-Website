@@ -32,7 +32,7 @@ gem 'bootstrap_form'
 gem 'faker'
 gem 'closure_tree'
 gem 'pg'
-gem 'will_paginate', '~> 3.1.0'
+gem 'kaminari'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

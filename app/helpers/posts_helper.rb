@@ -1,5 +1,5 @@
 module PostsHelper
   def set_posts
-    @posts = Post.all.order("created_at DESC").limit(20)
+    @posts = Post.order("created_at DESC").page(params[:page])
   end
 end
