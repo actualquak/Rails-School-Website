@@ -2,10 +2,14 @@ FROM ruby:2.5.5 AS rails-toolbox
 
 RUN apt-get update -yqq
 RUN apt-get install -y nodejs postgresql apache2
+RUN npm install --global yarn
 
 WORKDIR /app
 
 COPY Gemfile* ./
 RUN bundle install
+RUN yarn install
+RUN bin/webpack
+RUN rails db:setup
 
 COPY . .
