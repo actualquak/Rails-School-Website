@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_07_19_094245) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -39,8 +42,8 @@ ActiveRecord::Schema.define(version: 2021_07_19_094245) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "parent_id"
-    t.integer "article_id"
-    t.integer "user_id"
+    t.bigint "article_id"
+    t.bigint "user_id"
     t.index ["article_id"], name: "index_comments_on_article_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -48,8 +51,8 @@ ActiveRecord::Schema.define(version: 2021_07_19_094245) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "content"
-    t.integer "user_id"
-    t.integer "category_id"
+    t.bigint "user_id"
+    t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_posts_on_category_id"
