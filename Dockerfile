@@ -7,6 +7,6 @@ RUN npm install --global yarn
 WORKDIR /app
 
 COPY . .
-RUN rails db:setup
 RUN bundle install
 RUN yarn install
+RUN rails db:setup
