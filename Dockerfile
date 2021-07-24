@@ -9,7 +9,6 @@ WORKDIR /app
 COPY Gemfile* ./
 RUN bundle install
 RUN yarn install
-RUN bin/webpack
 RUN rails db:setup
 
 COPY . .
