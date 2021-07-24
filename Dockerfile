@@ -9,4 +9,3 @@ WORKDIR /app
 COPY . .
 RUN bundle install
 RUN yarn install
-RUN rails db:setup
