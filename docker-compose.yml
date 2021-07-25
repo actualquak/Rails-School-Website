@@ -22,7 +22,7 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: example
-    command: bash -c "cd /usr/src/app && rm -f tmp/pids/server.pid && set RAILS_ENV=production && rake secret && rails db:setup && bundle exec unicorn_rails -p 3000 -E development"
+    command: bash -c "cd /usr/src/app && rm -f tmp/pids/server.pid && set RAILS_ENV=production && rails db:setup && bundle exec unicorn_rails -p 3000 -E development"
     ports:
       - "3000:3000"
     depends_on:
