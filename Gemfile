@@ -34,8 +34,8 @@ gem 'closure_tree'
 gem 'pg', '~> 1.1'
 gem 'activerecord-postgresql-adapter'
 gem 'kaminari'
-gem 'unicorn'
 gem 'nokogiri'
+gem 'unicorn'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
