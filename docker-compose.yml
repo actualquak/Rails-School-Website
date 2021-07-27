@@ -22,6 +22,7 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: example
+      SECRET_KEY_BASE:
     command: bash -c "cd /usr/src/app && rm -f tmp/pids/server.pid && set RAILS_ENV=production && rails db:setup && bundle exec unicorn_rails -p 3000 -E development"
     depends_on:
       - rails_school_website_db
